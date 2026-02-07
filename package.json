@@ -7,7 +7,7 @@
     "uuid": "^13.0.0"
   },
   "scripts": {
-    "dev": "nodemon src/app.ts",
+    "dev": "nodemon src/server.ts",
     "build": "tsc",
     "start": "node dist/app.js",
     "test": "jest",
