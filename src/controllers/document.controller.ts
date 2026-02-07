@@ -8,7 +8,7 @@ export class DocumentController {
   constructor(private readonly service: DocumentService) { }
 
   process = (req: Request, res: Response) => {
-    const { id } = req.params;
+    const id = req.params.id as string;
 
     try {
       this.service.processDocument(id);
@@ -39,8 +39,9 @@ export class DocumentController {
       status: document.status,
     });
   };
+
   getById = (req: Request, res: Response) => {
-    const { id } = req.params;
+    const id = req.params.id as string;
 
     const document = this.service.getDocumentById(id);
     if (!document) {
@@ -51,7 +52,7 @@ export class DocumentController {
   };
 
   getStatus = (req: Request, res: Response) => {
-    const { id } = req.params;
+    const id = req.params.id as string;
 
     const document = this.service.getDocumentById(id);
     if (!document) {
@@ -81,7 +82,7 @@ export class DocumentController {
   };
 
   deleteById = (req: Request, res: Response) => {
-    const { id } = req.params;
+    const id = req.params.id as string;
 
     const deleted = this.service.deleteDocument(id);
     if (!deleted) {
