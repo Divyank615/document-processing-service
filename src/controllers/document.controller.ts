@@ -64,4 +64,31 @@ export class DocumentController {
       result: document.result,
     });
   };
+
+  list = (req: Request, res: Response) => {
+    const { status } = req.query;
+
+    let documents = this.service.getAllDocuments();
+
+    if (status && typeof status === 'string') {
+      documents = documents.filter(d => d.status === status);
+    }
+
+    return res.json({
+      documents,
+      total: documents.length,
+    });
+  };
+
+  deleteById = (req: Request, res: Response) => {
+    const { id } = req.params;
+
+    const deleted = this.service.deleteDocument(id);
+    if (!deleted) {
+      return res.status(404).json({ error: 'Document not found' });
+    }
+
+    return res.status(204).send();
+  };
+
 }
