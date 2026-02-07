@@ -22,5 +22,6 @@ const documentService = new DocumentService(
 const documentController = new DocumentController(documentService);
 
 app.post('/api/documents/:id/process', documentController.process);
+app.post('/api/documents/upload', documentController.upload);
 
 export default app;
