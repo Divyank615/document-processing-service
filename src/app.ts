@@ -23,5 +23,7 @@ const documentController = new DocumentController(documentService);
 
 app.post('/api/documents/:id/process', documentController.process);
 app.post('/api/documents/upload', documentController.upload);
+app.get('/api/documents/:id', documentController.getById);
+app.get('/api/documents/:id/status', documentController.getStatus);
 
 export default app;

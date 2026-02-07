@@ -39,5 +39,29 @@ export class DocumentController {
       status: document.status,
     });
   };
+  getById = (req: Request, res: Response) => {
+    const { id } = req.params;
 
+    const document = this.service.getDocumentById(id);
+    if (!document) {
+      return res.status(404).json({ error: 'Document not found' });
+    }
+
+    return res.json(document);
+  };
+
+  getStatus = (req: Request, res: Response) => {
+    const { id } = req.params;
+
+    const document = this.service.getDocumentById(id);
+    if (!document) {
+      return res.status(404).json({ error: 'Document not found' });
+    }
+
+    return res.json({
+      status: document.status,
+      progress: document.progress,
+      result: document.result,
+    });
+  };
 }
