@@ -25,10 +25,10 @@ const documentService = new DocumentService(
 
 const documentController = new DocumentController(documentService);
 
-app.post('/api/documents/:id/process', documentController.process);
 app.post('/api/documents/upload', validateUploadRequest, documentController.upload);
-app.get('/api/documents/:id', documentController.getById);
+app.post('/api/documents/:id/process', documentController.process);
 app.get('/api/documents/:id/status', documentController.getStatus);
+app.get('/api/documents/:id', documentController.getById);
 app.get('/api/documents', documentController.list);
 app.delete('/api/documents/:id', documentController.deleteById);
 

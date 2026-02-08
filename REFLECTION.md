@@ -29,3 +29,4 @@ All final decisions, code structure, and implementations were done by me after r
 
 This assignment helped me gain practical experience in building a backend service with asynchronous processing.
 It strengthened my understanding of clean architecture, background jobs, and testing in a TypeScript-based backend application.
+I tested all APIs end-to-end using Postman including edge cases.

@@ -98,3 +98,6 @@ Swagger UI is available for API documentation.
 
 After starting the server, open:
 http://localhost:3000/api-docs
+
+# conclusion
+I tested all APIs end-to-end using Postman including edge cases.
