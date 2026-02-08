@@ -6,7 +6,8 @@ import { ProcessorService } from './services/processor.service';
 import { DocumentController } from './controllers/document.controller';
 import { validateUploadRequest } from './middleware/validation';
 import { errorHandler } from './middleware/error-handler';
-
+import swaggerUi from 'swagger-ui-express';
+import { swaggerSpec } from './swagger';
 
 const app = express();
 
@@ -32,5 +33,6 @@ app.get('/api/documents', documentController.list);
 app.delete('/api/documents/:id', documentController.deleteById);
 
 app.use(errorHandler);
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 export default app;
