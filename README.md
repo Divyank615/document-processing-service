@@ -91,3 +91,10 @@ Add pagination for listing documents
 Perform real document parsing for PDF and CSV files
 Add authentication and authorization
 Improve logging and monitoring
+
+# API Documentation (Swagger)
+
+Swagger UI is available for API documentation.
+
+After starting the server, open:
+http://localhost:3000/api-docs
